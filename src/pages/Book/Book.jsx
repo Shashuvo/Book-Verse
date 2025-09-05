@@ -6,7 +6,7 @@ const Book = ({ singleBook }) => {
 
     const { bookId, bookName, author, image, tags, rating, category } = singleBook;
 
-    console.log(bookName, author, image);
+    // console.log(bookName, author, image);
 
 
     return (
@@ -14,13 +14,13 @@ const Book = ({ singleBook }) => {
             <div className="card bg-base-100 shadow-sm border border-gray-400 rounded-2xl">
                 <figure className=' bg-gray-100 w-[326px] h-[230px] mx-auto mt-6 rounded-2xl'>
                     <img
-                        className='h-[166px] w-[125px]:'
+                        className='h-[166px] w-[125px]'
                         src={image}
                         alt="Books" />
                 </figure>
                 <div className="card-body w-[326px] h-[230px] mx-auto ml-6 ">
                     <div className='flex gap-3'>
-                        <div className="badge  bg-[#23BE0A]/5 text-[#23BE0A] font-medium text-[16px] px-4 py-4">{tags[0]}</div>
+                    <div className="badge  bg-[#23BE0A]/5 text-[#23BE0A] font-medium text-[16px] px-4 py-4">{tags[0]}</div>
                         <div className="badge  bg-[#23BE0A]/5 text-[#23BE0A] font-medium text-[16px] px-4 py-4">{tags[1]}</div>
                     </div>
                     <h2 className="card-title font-bold text-2xl">

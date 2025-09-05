@@ -11,12 +11,14 @@ const Navbar = () => {
 
     const links = <>
         <Link to='/' onClick={()=>handleClick("home")}><li id='home' className={`m-2 text-[18px] font-semibold 
-        ${active==="home"?" border-4 border-[#23BE0A] box-content rounded-xl px-4 py-2" : ""}
+        ${active==="home"?" border-4 border-[#23BE0A] box-content rounded-xl px-4 py-2 text-[#23BE0A]" : ""}
         `}>Home</li></Link>
         <Link to='/listedBooks'onClick={()=>handleClick("listedBooks")}><li id='listedBooks' className={`m-2 text-[18px] font-semibold 
-        ${active==="listedBooks"?"border-4 border-[#23BE0A] box-content rounded-xl px-4 py-2" : ""}
+        ${active==="listedBooks"?"border-4 border-[#23BE0A] box-content rounded-xl px-4 py-2 text-[#23BE0A]" : ""}
         `}>Listed Books</li></Link>
-        <li className='m-2 text-[18px] font-semibold'>Pages to Read</li>
+        <Link to='/pagesToRead'onClick={()=>handleClick("pagestoread")}><li id='pagestoread' className={`m-2 text-[18px] font-semibold 
+        ${active==="pagestoread"?"border-4 border-[#23BE0A] box-content rounded-xl px-4 py-2 text-[#23BE0A]" : ""}
+        `}>Pages to Read</li></Link>
     </>
 
     return (
