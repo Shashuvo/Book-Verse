@@ -1,18 +1,26 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addDataToDB } from '../../Utility/addToDB';
 
 const BookDetails = () => {
+    // loading book details
     const { id } = useParams();
     const bId = parseInt(id);
     const bookData = useLoaderData();
     const bookDetails = bookData.find(book => book.bookId === bId)
-    const { bookName, author, image, category, review, tags, totalPages, rating, publisher, yearOfPublishing } = bookDetails
+    const { bookName, author, image, category, review, tags, totalPages, rating, publisher, yearOfPublishing } = bookDetails;
+
+    // function to handle mark as read
+    const handleMarkAsRead =(id)=>{
+        addDataToDB(id);
+    }
+
     return (
         <div>
             <div className='flex gap-12'>
                 {/* Image */}
-                <div className='shadow-sm bg-black/5 rounded-2xl p-[74px] w-4/5'>
-                    <img className='w-[425px] h-[564px]' src={image} alt="Book Image" />
+                <div className='shadow-sm bg-black/5 rounded-2xl p-[74px] w-3/4'>
+                    <img className='w-[425px] h-[570px]' src={image} alt="Book Image" />
                 </div>
                 {/* details */}
                 <div className="flex w-full flex-col">
@@ -49,8 +57,8 @@ const BookDetails = () => {
                     </div>
                     {/* Buttons */}
                     <div className='flex gap-4'>
-                    <a className="btn w-[101px] h-[57px] bg-white text-black rounded-xl text-[18px] border-black/30">Read</a>
-                    <a className="btn w-[128px] h-[57px] bg-[#59C6D2] text-white rounded-xl text-[18px]">Wishlist</a>
+                    <a onClick={()=>handleMarkAsRead(id)} className="btn px-7 py-5 bg-white text-black rounded-xl text-[18px] border-black/30">Mark as Read</a>
+                    <a className="btn px-7 py-5 bg-[#59C6D2] text-white rounded-xl text-[18px]">Add to Wishlist</a>
                     </div>
                 </div>
             </div>

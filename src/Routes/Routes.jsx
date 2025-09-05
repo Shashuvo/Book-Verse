@@ -1,9 +1,8 @@
 import React from 'react';
-import { Navigate, createBrowserRouter } from "react-router";
+import {  Navigate, createBrowserRouter } from "react-router";
 import Root from '../pages/Root/Root';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Home from '../pages/Home/Home';
-import About from '../pages/ListedBooks/ListedBooks';
 import ListedBooks from '../pages/ListedBooks/ListedBooks';
 import BookDetails from '../pages/BookDetails/BookDetails';
 
@@ -16,8 +15,12 @@ const router = createBrowserRouter([
         {
           index: true,
           loader:()=>fetch('booksData.json'),
-          path: "/",
+          path:'/',
           Component: Home
+        },
+        {
+          path: '/home',
+          element: <Navigate to ='/' replace />
         },
         {
           path:'/listedBooks',
@@ -27,7 +30,7 @@ const router = createBrowserRouter([
           path:'/bookDetails/:id',
           loader:()=>fetch('booksData.json'),
           Component: BookDetails
-        }
+        },
     ]
     },
   ]);

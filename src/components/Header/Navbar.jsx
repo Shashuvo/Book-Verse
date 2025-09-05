@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router';
 
 const Navbar = () => {
 
+    const [active,setActive] =useState("");
+
+    const handleClick = (id) =>{
+        setActive(id);
+    }
+
     const links = <>
-        <Link to='/'><li className='m-2 text-[18px] font-semibold'>Home</li></Link>
-        <Link to='/listedBooks'><li className='m-2 text-[18px] font-semibold'>Listed Books</li></Link>
+        <Link to='/' onClick={()=>handleClick("home")}><li id='home' className={`m-2 text-[18px] font-semibold 
+        ${active==="home"?" border-4 border-[#23BE0A] box-content rounded-xl px-4 py-2" : ""}
+        `}>Home</li></Link>
+        <Link to='/listedBooks'onClick={()=>handleClick("listedBooks")}><li id='listedBooks' className={`m-2 text-[18px] font-semibold 
+        ${active==="listedBooks"?"border-4 border-[#23BE0A] box-content rounded-xl px-4 py-2" : ""}
+        `}>Listed Books</li></Link>
         <li className='m-2 text-[18px] font-semibold'>Pages to Read</li>
     </>
 
