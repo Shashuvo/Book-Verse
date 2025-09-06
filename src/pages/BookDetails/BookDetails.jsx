@@ -11,12 +11,12 @@ const BookDetails = () => {
     const { bookName, author, image, category, review, tags, totalPages, rating, publisher, yearOfPublishing } = bookDetails;
 
     // function to handle mark as read
-    const handleMarkAsRead =(id)=>{
+    const handleMarkAsRead = (id) => {
         addDataToDB(id);
     }
 
     // function to handle Wishlist
-    const handleMyWishlist =(id)=>{
+    const handleMyWishlist = (id) => {
         addToWishlist(id);
     }
 
@@ -48,22 +48,22 @@ const BookDetails = () => {
                     <div className="divider"></div>
                     <div className='flex mb-8 font-semibold mr-[59px] gap-[59px]'>
                         <div className='flex flex-col gap-3'>
-                        <p className='opacity-70'>Number of Pages:</p>
-                        <p className='opacity-70 '>Publisher:</p>
-                        <p className='opacity-70 '>Year of Publishing:</p>
-                        <p className='opacity-70 '>Rating:</p>
+                            <p className='opacity-70'>Number of Pages:</p>
+                            <p className='opacity-70 '>Publisher:</p>
+                            <p className='opacity-70 '>Year of Publishing:</p>
+                            <p className='opacity-70 '>Rating:</p>
                         </div>
                         <div className='flex flex-col gap-3'>
-                           <p>{totalPages}</p>
-                           <p>{publisher}</p>
-                           <p>{yearOfPublishing}</p>
-                           <p>{rating}</p>
+                            <p>{totalPages}</p>
+                            <p>{publisher}</p>
+                            <p>{yearOfPublishing}</p>
+                            <p>{rating}</p>
                         </div>
                     </div>
                     {/* Buttons */}
                     <div className='flex gap-4'>
-                    <a onClick={()=>handleMarkAsRead(id)} className="btn px-7 py-5 bg-white text-black rounded-xl text-[18px] border-black/30">Mark as Read</a>
-                    <a onClick={()=>handleMyWishlist(id)} className="btn px-7 py-5 bg-[#59C6D2] text-white rounded-xl text-[18px]">Add to Wishlist</a>
+                        <a onClick={() => handleMarkAsRead(id)} className="btn px-7 py-5 bg-white text-black rounded-xl text-[18px] border-black/30">Mark as Read</a>
+                        <a onClick={() => handleMyWishlist(id)} className="btn px-7 py-5 bg-[#59C6D2] text-white rounded-xl text-[18px]">Add to Wishlist</a>
                     </div>
                 </div>
             </div>

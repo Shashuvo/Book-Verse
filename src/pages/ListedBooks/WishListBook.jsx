@@ -3,16 +3,18 @@ import { IoLocationOutline } from "react-icons/io5";
 import { HiUsers } from "react-icons/hi";
 import { HiOutlineClipboardList } from "react-icons/hi";
 
-const WishListBook = ({b}) => {
+const WishListBook = ({ b }) => {
     const { bookName, image, author, tags, yearOfPublishing, publisher, totalPages, rating, category } = b;
     return (
         <div className="card lg:card-side bg-base-100 shadow-sm border-2 border-black/15 mb-6 ">
-            <figure className=' w-1/3 p-6 flex items-center justify-center overflow-hidden'>
+            <div className='h-[320px] w-[230px]'>
+            <figure className=' p-6 flex items-center justify-center overflow-hidden'>
                 <img
                     className=' h-auto w-auto object-contain bg-black/5 rounded-2xl p-6 '
                     src={image}
                     alt="Book Image" />
             </figure>
+            </div>
             <div className="card-body gap-4 flex items-start justify-center">
                 <div className='flex flex-col gap-4'>
                     <h2 className="card-title font-bold text-2xl">{bookName}</h2>
