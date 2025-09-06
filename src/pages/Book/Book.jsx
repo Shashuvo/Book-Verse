@@ -20,7 +20,7 @@ const Book = ({ singleBook }) => {
                 </figure>
                 <div className="card-body w-[326px] h-[230px] mx-auto ml-6 ">
                     <div className='flex gap-3'>
-                    <div className="badge  bg-[#23BE0A]/5 text-[#23BE0A] font-medium text-[16px] px-4 py-4">{tags[0]}</div>
+                        <div className="badge  bg-[#23BE0A]/5 text-[#23BE0A] font-medium text-[16px] px-4 py-4">{tags[0]}</div>
                         <div className="badge  bg-[#23BE0A]/5 text-[#23BE0A] font-medium text-[16px] px-4 py-4">{tags[1]}</div>
                     </div>
                     <h2 className="card-title font-bold text-2xl">

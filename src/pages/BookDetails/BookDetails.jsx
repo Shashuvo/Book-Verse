@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addDataToDB, addToWishlist } from '../../Utility/addToDB';
+import { ToastContainer } from 'react-toastify';
 
 const BookDetails = () => {
     // loading book details
@@ -63,6 +64,7 @@ const BookDetails = () => {
                     {/* Buttons */}
                     <div className='flex gap-4'>
                         <a onClick={() => handleMarkAsRead(id)} className="btn px-7 py-5 bg-white text-black rounded-xl text-[18px] border-black/30">Mark as Read</a>
+                        <ToastContainer></ToastContainer>
                         <a onClick={() => handleMyWishlist(id)} className="btn px-7 py-5 bg-[#59C6D2] text-white rounded-xl text-[18px]">Add to Wishlist</a>
                     </div>
                 </div>

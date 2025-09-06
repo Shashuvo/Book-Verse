@@ -7,15 +7,15 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 const ListedBook = ({ book }) => {
     const { bookName, image, author, tags, yearOfPublishing, publisher, totalPages, rating, category } = book;
     return (
-        
+
         <div className="card lg:card-side bg-base-100 shadow-sm border-2 border-black/15 mb-6">
             <div className='h-[320px] w-[230px]'>
-            <figure className=' p-6 flex items-center justify-center overflow-hidden'>
-                <img
-                    className=' h-auto w-auto object-contain bg-black/5 rounded-2xl p-6 '
-                    src={image}
-                    alt="Book Image" />
-            </figure>
+                <figure className=' p-6 flex items-center justify-center overflow-hidden'>
+                    <img
+                        className=' h-auto w-auto object-contain bg-black/5 rounded-2xl p-6 '
+                        src={image}
+                        alt="Book Image" />
+                </figure>
             </div>
             <div className="card-body gap-4 flex items-start justify-center">
                 <div className='flex flex-col gap-4'>

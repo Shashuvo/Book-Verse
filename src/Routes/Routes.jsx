@@ -35,6 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/pagesToRead',
+        loader: () => fetch('booksData.json'),
         Component: PagesToRead
       }
     ]
